@@ -1,0 +1,16 @@
+[package]
+name = "usrsctp-sys"
+version = "0.1.0"
+edition = "2018"
+links = "usrsctp"
+
+authors = ["Parth Shastri"]
+description = "Bindings to the usrsctp library."
+repository = "https://github.com/cppio/usrsctp-rs"
+license = "MIT"
+keywords = ["usrsctp", "sctp"]
+categories = ["external-ffi-bindings"]
+
+[build-dependencies]
+bindgen = "0.53.2"
+cmake = "0.1.42"
