@@ -1,5 +1,6 @@
 fn main() {
     let out_path = cmake::Config::new("usrsctp")
+        .define("sctp_werror", "0")
         .build_target("usrsctp-static")
         .build();
 
@@ -8,6 +9,8 @@ fn main() {
         "cargo:rustc-link-search=native={}/build/usrsctplib",
         out_path.display()
     );
+
+    println!("cargo:rerun-if-changed=usrsctp/usrsctplib/usrsctp.h");
 
     bindgen::builder()
         .header("usrsctp/usrsctplib/usrsctp.h")
